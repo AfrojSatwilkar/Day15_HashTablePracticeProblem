@@ -3,21 +3,24 @@ package com.company1.Day15_HashTablePracticeProblem;
 import java.util.List;
 
 public class Operation {
-
-    public String[] splitString(String str) {
-        String[] split = str.toLowerCase().split(" ");
-        return split;
+    public void slotData(String string, Object listObj) {
+        List<String> qobj = (List<String>) listObj;
+        qobj.add(string);
     }
 
-    public static void add(int occurence, Object obj) {
-        List<Integer> stringList = (List<Integer>) obj;
-
-        stringList.add(occurence);
-    }
-
-    public static void print(Object o, String split) {
+    public void showSlotedData(Object o, int key) {
         List<Integer> obj = (List<Integer>) o;
-        System.out.print(split + " => ");
+
+        System.out.print("Key no " + key + " => ");
         System.out.println(obj.toString());
+    }
+
+    public void searchKey(Object obj, String searchKey, int key) {
+        List<Integer> qobj = (List<Integer>) obj;
+        if (qobj.contains(searchKey)) {
+            System.out.println("Data is Present at " + key + " no");
+        } else {
+            System.out.println("Data is not present");
+        }
     }
 }
