@@ -23,4 +23,10 @@ public class Operation {
             System.out.println("Data is not present");
         }
     }
+
+    void remove(String string, int i, Object object) {
+        List<String> list=(List<String>) object;
+        list.remove(i);
+    }
+
 }
